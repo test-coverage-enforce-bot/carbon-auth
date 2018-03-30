@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -342,7 +342,8 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin><!-- Overridden from parent pom to exclude generated sources -->
+                <plugin>
+          <!-- Overridden from parent pom to exclude generated sources -->
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
                     <configuration>
@@ -365,7 +366,8 @@
                         </execution>
                     </executions>
                 </plugin>
-                <plugin><!-- Overridden from parent pom to exclude generated sources -->
+                <plugin>
+          <!-- Overridden from parent pom to exclude generated sources -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <executions>
@@ -481,7 +483,7 @@
                                             <limit>
                                                 <counter>INSTRUCTION</counter>
                                                 <value>COVEREDRATIO</value>
-                                                <minimum>0.70</minimum>
+                                                <minimum>0.9</minimum>
                                             </limit>
                                         </limits>
                                     </rule>
@@ -499,7 +501,8 @@
                             <jacoco-agent.destfile>${basedir}/target/coverage-reports/jacoco-ut.exec
                             </jacoco-agent.destfile>
                         </systemPropertyVariables>
-                    </configuration>
+                    <argLine>${argLine}</argLine>
+          </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
